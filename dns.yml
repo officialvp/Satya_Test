@@ -1,0 +1,20 @@
+---
+  - name: Install Dns
+    hosts: all
+
+    tasks:
+    - name: Install DNS
+      yum:
+        name: nginx
+        state: present
+      tags: i-dns 
+
+    - name: Start DNS
+      service:
+        name: nginx
+        state: started
+      tags: s-dns
+    - name: Delete nginx
+      shell: 
+          "yum remove nginx"
+      tags: d-nginx 

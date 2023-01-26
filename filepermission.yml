@@ -1,0 +1,9 @@
+---
+  - name: Change File Permission
+    hosts: all
+
+    tasks:
+      - name: Files permission
+        file:
+          path: /home/centos/Ansible-Client/hello.txt
+          mode: a+wx

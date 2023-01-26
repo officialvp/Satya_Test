@@ -1,0 +1,10 @@
+---
+  - name: Copy File from local host to remote host
+    hosts: all
+
+    tasks:
+      - name: Copying File
+        copy:
+          src: /etc/ansible/playbooks/first.yml
+          dest: /tmp
+          mode: 777

@@ -1,0 +1,21 @@
+---
+  - name: "Multiple Tasks"
+    hosts: localhost
+
+    tasks:
+        - name: Test Connecivity
+          ping:
+
+        - name: Print Hello World
+          debug: msg="Hello World ! I am Vivek Patel"
+ 
+      
+        - name: Install httpd
+          yum:
+             name: httpd
+             state: preset
+   
+         - name: Start Httpd
+           services:
+              name: httpd
+              state: started

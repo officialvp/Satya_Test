@@ -1,0 +1,11 @@
+---
+  - name: Playbook For Add user
+    hosts: all
+
+    tasks:
+      - name: Create User
+        user:
+          name: vicky
+          home: /home/vicky
+          shell: /bin/bash
+        become: true

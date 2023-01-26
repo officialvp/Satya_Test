@@ -1,0 +1,16 @@
+---
+  - name: Create a Cron Job
+    hosts: all
+
+    tasks:
+      - name: Cron Job by Ansible
+        cron:
+           name: This is first Cron job
+           minute: "19"
+           hour: "15"
+           day: "*"
+           month: "*"
+           weekday: "1"
+           user: root
+           job: "/home/centos/Ansible-Client/test1.sh"
+        become: true

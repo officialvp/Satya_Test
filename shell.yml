@@ -1,0 +1,12 @@
+---
+  - name: Test Shell Script File
+    hosts: all
+
+    tasks:
+       - name: Chnage File Permission
+         file:
+           path: /home/centos/Ansible-Client/test1.sh
+           mode: a+x
+
+       - name: Execute Shell
+         shell: "/home/centos/Ansible-Client/test1.sh"

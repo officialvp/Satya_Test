@@ -1,0 +1,22 @@
+---
+  - name: Download Tomcat Package
+    hosts: localhost
+
+    tasks: 
+       - name: Create Directory
+         file:
+           path: /opt/tomcat
+           state: directory
+           mode: 0777
+           owner: root
+           group: root
+         become: true
+
+
+       - name: Download tomcat 
+         get_url:
+           url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.zip
+           dest: /opt/tomcat
+           mode: 0755
+           owner: centos
+           group: centos
